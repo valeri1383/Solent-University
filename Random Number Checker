@@ -1,0 +1,29 @@
+from random import randrange
+
+
+def number_check(a, b):
+    if a == b:
+        return True
+    return False
+
+
+min_value = int(input("Please enter the minimum value: "))
+max_value = int(input("Please enter the maximum value: "))
+random_num = randrange(min_value, max_value)
+print(f"I am thinking of a number between {min_value} and {max_value}. Can you guess what it is?")
+
+
+while True:
+    user_number = int(input())
+    state_vadidation = number_check(user_number, random_num)
+
+    if state_vadidation:
+        print("Congratulations! You guessed my number!")
+        break
+
+    print("Try again:")
+
+
+
+
+
