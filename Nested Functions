@@ -1,0 +1,24 @@
+weight_beep = int(input("What is the weight of Beep? "))
+weight_bob = int(input("What is the weight of Bob? "))
+task_to_perform = input("What would you like to calculate (sum or average)?")
+
+
+def weight_sum(a, b):
+    total = a + b
+    return total
+
+
+def weight_average(a, b):
+    total = weight_sum(a, b) // 2
+    return total
+
+
+if task_to_perform == "sum":
+    result = weight_sum(weight_beep, weight_bob)
+elif task_to_perform == "average":
+    result = weight_average(weight_beep, weight_bob)
+else:
+    raise TypeError("Please enter valid operation")
+
+
+print(f"The {task_to_perform} of Beep and Bop's weight is {result}.")
