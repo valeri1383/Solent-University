@@ -1,24 +1,30 @@
-weight_beep = int(input("What is the weight of Beep? "))
-weight_bob = int(input("What is the weight of Bob? "))
-task_to_perform = input("What would you like to calculate (sum or average)?")
+from random import randrange
 
 
-def weight_sum(a, b):
-    total = a + b
-    return total
+def number_check(a, b):
+    if a == b:
+        return True
+    return False
 
 
-def weight_average(a, b):
-    total = weight_sum(a, b) // 2
-    return total
+min_value = int(input("Please enter the minimum value: "))
+max_value = int(input("Please enter the maximum value: "))
+random_num = randrange(min_value, max_value)
+current_attempt = 0
+print(f"I am thinking of a number between {min_value} and {max_value}. Can you guess what it is?")
 
 
-if task_to_perform == "sum":
-    result = weight_sum(weight_beep, weight_bob)
-elif task_to_perform == "average":
-    result = weight_average(weight_beep, weight_bob)
-else:
-    raise TypeError("Please enter valid operation")
+while True:
+    user_number = int(input())
+    state_vadidation = number_check(user_number, random_num)
 
+    if state_vadidation:
+        print("Congratulations! You guessed my number!")
+        break
 
-print(f"The {task_to_perform} of Beep and Bop's weight is {result}.")
+    # Logg file Recording
+    with open("Error Log", "a") as file:
+        current_attempt += 1
+        file.write(f"Wrong number! Number of attempts {current_attempt}\n" + "-" * 35 + "\n")
+
+    print("Try again:")
