@@ -27,6 +27,29 @@ def run():
 run()
 
 
+
+# Solution with Class
+class Paterns():
+    def __init__(self,name, sequence, occurrences):
+        self.name = name
+        self.sequence = sequence
+        self.occurrences = occurrences
+
+    def __str__(self):
+        return f"{self.name}: {self.sequence}=> {self.occurrences} "
+
+
+short_pattern = Paterns("short", 101, 5)
+medium_pattern = Paterns("medium", 111000, 25)
+long_pattern = Paterns("long", 1100110011001100, 50)
+
+list_patterns = [short_pattern, medium_pattern, long_pattern]
+
+print([x.__str__() for x in list_patterns])
+
+
+
+# Task Requarments
 '''We wish to create a program to help Beep and Bop identify the patterns.
 
 The program should consist of the following four functions:
