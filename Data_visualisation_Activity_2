@@ -1,0 +1,50 @@
+import matplotlib.pyplot as plt
+
+def small():
+    x = [3, 3, 4, 4, 3]
+    y = [3, 4, 4, 3, 3]
+    plt.plot(x, y, 'r:o')
+
+
+def medium():
+    x = [2, 2, 5, 5, 2]
+    y = [2, 5, 5, 2, 2]
+    plt.plot(x, y, 'g:o')
+
+
+def large():
+    x = [1, 1, 6, 6, 1]
+    y = [1, 6, 6, 1, 1]
+    plt.plot(x, y, 'b-p')
+
+
+def run():
+    small()
+    medium()
+    large()
+    plt.show()
+
+
+run()
+
+'''
+We wish to create a program to display the path Beep and Bop are taking through Robo City.
+
+The program should consist of the following three functions:
+
+The first function should be named small and should have no parameters.
+The function should display a small square using a line plot.
+The line should be a red dotted line with circle markers.
+The second function should be named medium and should have no parameters. 
+The function should display a medium square around the small square using a line plot.
+The line should be a green dashed line with square markers.
+The third function should be named large and should have no parameters.
+The function should display a large square around the medium square using a line  plot.
+The line should be a blue solid line with pentagon markers.
+
+When executed, a line plot similar to the following should be displayed:
+
+PyPlot Squares
+
+
+'''
