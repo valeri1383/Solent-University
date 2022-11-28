@@ -1,0 +1,55 @@
+import matplotlib.pyplot as plt
+import random as rnd
+
+
+def data():
+    line_type = input("What line would you prefer - or -- ? ")
+    color = input("What color would you like r, g, or b? ")
+    marker = input("What marker would you like o, s or ^? ")
+    paths = {"line_type": line_type, "color": color, "marker": marker}
+    return paths
+
+
+def generate():
+    lines_number = int(input("How many lines would you like to display?"))
+    for line in range(lines_number):
+        values = data()
+        x = rnd.sample(range(1, 10), 3)
+        y = rnd.sample(range(1, 10), 3)
+        format = f"{values['color']}{values['marker']}{values['line_type']}"
+        plt.plot(x, y, format)
+    plt.show()
+
+
+def run():
+    print("Running....")
+    generate()
+    print("Done!")
+
+
+run()
+
+
+'''
+We wish to create a program to display the path Beep and Bop are taking through Robo City.
+
+The program should consist of the following three functions:
+
+The first function should be named data and should have no parameters.
+The function should start by creating an empty dictionary named paths.
+The function should then ask the user what type of line they would like (:, -- or -) and read in the user's response.
+The function should then ask the user what colour they would like (r, g or b) and read in the user's response.
+The function should then ask the user what style of marker they would like (o, s or ^) and read in the user's response.
+The function should then store the line style, colour, marker style in the dictionary as key-value pairs
+Finally, the function should return the dictionary.
+The second function should be named generate and should have no parameters. 
+The function should start by displaying the message "How many lines would you like to display?" and then read in the user's response.
+The function should then create a loop that iterates as many times as the number of lines specified by user and does the following:
+    Call the first function and store the result in a variable named values.
+    Display a line graph using the values stored in values and random values for x and y (see random.sample)
+The third function should be named run and should have no parameters.
+The function start by displaying the message "Running....".
+The function should then call the second function.
+Finally, the function should display the message "Done!".
+
+'''
